@@ -1,0 +1,26 @@
+services:
+ app:
+   ports:
+     - 8000:80
+     - 5173:5173
+   platform: linux/amd64
+   build: ./docker/app
+   container_name: laravel_app
+   volumes:
+     - ./src:/var/www/html
+     - ./src/vendor:/var/www/html/vendor
+ db:
+   image: mariadb:10.3
+   container_name: laravel_db
+   platform: linux/amd64
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: db
+     MYSQL_USER: user
+     MYSQL_PASSWORD: pass
+     TZ: 'Asia/Tokyo'
+   volumes:
+     - ./docker/db/data:/var/lib/mysql
+     - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+   ports:
+     - 3307:3307
