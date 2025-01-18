@@ -14,11 +14,11 @@ services:
    container_name: laravel_db
    platform: linux/amd64
    environment:
-     MYSQL_ROOT_PASSWORD: root
-     MYSQL_DATABASE: db
-     MYSQL_USER: user
-     MYSQL_PASSWORD: pass
-     TZ: 'Asia/Tokyo'
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: ${TZ}
    volumes:
      - ./docker/db/data:/var/lib/mysql
      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
