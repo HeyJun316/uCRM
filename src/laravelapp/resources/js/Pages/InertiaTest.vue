@@ -11,7 +11,7 @@ const newContent = ref('');
 
 <!-- writable HTML -->
 <template>
-Inertia Test desu <br>
+Inertia Test です！ <br>
 <a href="/">vie a tag</a><br>
 <Link href="/">via Link tag</Link><br>
 <Link :href="route('inertia.index')">Inertia test</Link><br>

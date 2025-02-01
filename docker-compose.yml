@@ -8,7 +8,7 @@ services:
    container_name: laravel_app
    volumes:
      - ./src:/var/www/html
-     - ./src/vendor:/var/www/html/vendor
+    #  - ./src/vendor:/var/www/html/vendor
  db:
    image: mariadb:10.3
    container_name: laravel_db
